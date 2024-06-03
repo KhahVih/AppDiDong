@@ -3,12 +3,15 @@ import 'package:app_travel/core/constants/dismension_constants.dart';
 import 'package:app_travel/core/constants/textstyle_ext.dart';
 import 'package:app_travel/core/helpers/assets_helper.dart';
 import 'package:app_travel/core/helpers/image_helper.dart';
+import 'package:app_travel/representation/screens/flights_booking_screen.dart';
 import 'package:app_travel/representation/screens/hotel_booking_screen.dart';
 import 'package:app_travel/representation/widgets/app_bar_container.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  static const routeName = '/home_screen';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -17,22 +20,22 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final List<Map<String, String>> listImageLeft = [
     {
-      'name': 'Korea',
-      'image': AssetHelper.korea,
+      'name': 'Đà Nẵng',
+      'image': AssetHelper.DaNang,
     },
     {
-      'name': 'Dubai',
-      'image': AssetHelper.dubai,
+      'name': 'Đà Lạt',
+      'image': AssetHelper.DaLat,
     },
   ];
   final List<Map<String, String>> listImageRight = [
     {
-      'name': 'Turkey',
-      'image': AssetHelper.turkey,
+      'name': 'Vũng Tàu',
+      'image': AssetHelper.VungTau,
     },
     {
-      'name': 'Japan',
-      'image': AssetHelper.japan,
+      'name': 'Phú Quốc',
+      'image': AssetHelper.PhuQuoc,
     },
   ];
 
@@ -136,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Hi James!', style: TextStyles.defaultStyle.fontHeader.whiteTextColor.bold),
+                Text('Hi !', style: TextStyles.defaultStyle.fontHeader.whiteTextColor.bold),
                 SizedBox(
                   height: kMediumPadding,
                 ),
@@ -166,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               padding: EdgeInsets.all(kItemPadding),
               child: ImageHelper.loadFromAsset(
-                AssetHelper.person,
+                AssetHelper.logo,
               ),
             ),
           ],
@@ -232,7 +235,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: kDefaultIconSize,
                     ),
                     Color(0xffF77777),
-                        () {},
+                        () {
+                          Navigator.of(context).pushNamed(FlightsBookingScreen.routeName);
+                        },
                     'Flights'
                 ),
               ),
