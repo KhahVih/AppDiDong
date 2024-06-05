@@ -20,6 +20,7 @@ mixin AssetHelper {
   static const String icoNonSmoke = 'assets/icons/ico_non_smoke.png';
   static const String icoUser = 'assets/icons/ico_user.png';
   static const String icoPromo = 'assets/icons/ico_promo.png';
+  static const String icoTicket = 'assets/icons/ticket.png';
 
   //Assets in images
   static const String backgroundSplash = 'assets/images/background_splash.png';
@@ -40,4 +41,10 @@ mixin AssetHelper {
   static const String VungTau = 'assets/images/vungtau.jpg';
   static const String PhuQuoc = 'assets/images/phuquoc.jpg';
   static const String DaLat = 'assets/images/dalat.jpg';
+  static const String DongThap = 'assets/images/dongthap.jpg';
+  static const String QuangNgai = 'assets/images/quangngai.jpg';
+  static const String HaNoi = 'assets/images/hanoi.jpg';
+  static const String HaLong = 'assets/images/halong.jpg';
+  static const String Flight1 = 'assets/images/flight1.jpg';
+  static const String Flight2 = 'assets/images/flight2.jpg';
 }

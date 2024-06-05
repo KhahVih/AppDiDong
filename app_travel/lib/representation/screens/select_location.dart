@@ -10,7 +10,7 @@ class LocationSelection extends StatelessWidget {
   static const String routeName = '/select_location';
   @override
   Widget build(BuildContext context) {
-    final locations = ['Đà Nẵng', 'Đà Lạt', 'Vũng Tàu', 'Phú Quóc'];
+    final locations = ['Đà Nẵng', 'Đà Lạt', 'Vũng Tàu', 'Phú Quóc', 'Hà Nội', 'Hạ Long', 'Quảng Ngãi', 'Đồng Tháp'];
     return   AppBarContainer(
       titleString: 'Select Location',
       paddingContent: EdgeInsets.all(kMediumPadding),

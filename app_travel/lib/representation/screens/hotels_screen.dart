@@ -20,7 +20,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
     HotelModel(
       hotelImage: AssetHelper.hotel1,
       hotelName: 'Royal Palm Heritage',
-      location: 'Purwokerto, Jateng',
+      location: 'Việt Nam',
       awayKilometer: '364 m',
       star: 4.5,
       numberOfReview: 3241,
@@ -29,7 +29,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
     HotelModel(
       hotelImage: AssetHelper.hotel2,
       hotelName: 'Grand Luxury\'s',
-      location: 'Banyumas, Jateng',
+      location: 'Việt Nam',
       awayKilometer: '2.3 km',
       star: 4.2,
       numberOfReview: 3241,
@@ -38,7 +38,7 @@ class _HotelsScreenState extends State<HotelsScreen> {
     HotelModel(
       hotelImage: AssetHelper.hotel3,
       hotelName: 'The Orlando House',
-      location: 'Ajibarang, Jateng',
+      location: 'Việt Nam',
       awayKilometer: '1.1 km',
       star: 3.8,
       numberOfReview: 1234,

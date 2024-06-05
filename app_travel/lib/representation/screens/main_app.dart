@@ -1,6 +1,7 @@
 import 'package:app_travel/core/constants/color_constants.dart';
 import 'package:app_travel/core/constants/dismension_constants.dart';
 import 'package:app_travel/representation/screens/home_screen.dart';
+import 'package:app_travel/representation/screens/like_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -64,7 +65,7 @@ class _MainAppState extends State<MainApp> {
         index: _currentIndex,
         children: [
           HomeScreen(),
-          Container(),
+          LikeScreen(),
           Container(),
           Container(),
         ],

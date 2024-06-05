@@ -3,6 +3,7 @@ import 'package:app_travel/core/constants/dismension_constants.dart';
 import 'package:app_travel/core/constants/textstyle_ext.dart';
 import 'package:app_travel/core/helpers/assets_helper.dart';
 import 'package:app_travel/core/helpers/image_helper.dart';
+import 'package:app_travel/representation/screens/all_screen.dart';
 import 'package:app_travel/representation/screens/flights_booking_screen.dart';
 import 'package:app_travel/representation/screens/hotel_booking_screen.dart';
 import 'package:app_travel/representation/widgets/app_bar_container.dart';
@@ -250,7 +251,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: kDefaultIconSize,
                     ),
                     Color(0xff3EC8BC),
-                        () {},
+                        () {
+                          Navigator.of(context).pushNamed(AllScreen.routeName);
+                        },
                     'All'
                 ),
               ),

@@ -1,7 +1,9 @@
 import 'package:app_travel/core/constants/dismension_constants.dart';
 import 'package:app_travel/core/extensions/date_ext.dart';
 import 'package:app_travel/core/helpers/assets_helper.dart';
+import 'package:app_travel/representation/screens/flight_screen.dart';
 import 'package:app_travel/representation/screens/home_screen.dart';
+import 'package:app_travel/representation/screens/main_app.dart';
 import 'package:app_travel/representation/screens/select_date_screen.dart';
 import 'package:app_travel/representation/screens/select_location.dart';
 import 'package:app_travel/representation/widgets/app_bar_container.dart';
@@ -68,7 +70,7 @@ class _FlightsBookingScreenState extends State<FlightsBookingScreen> {
             ItemButtonWidget(
               data: 'Search',
               onTap: () {
-                Navigator.of(context).pushNamed(HomeScreen.routeName);
+                Navigator.of(context).pushNamed(FlightsScreen.routeName);
               },
             ),
           ],

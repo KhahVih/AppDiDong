@@ -1,7 +1,10 @@
 import 'package:app_travel/data/model/hotel_model.dart';
 import 'package:app_travel/data/model/room_model.dart';
+import 'package:app_travel/representation/screens/all_screen.dart';
+import 'package:app_travel/representation/screens/book_ticket.dart';
 import 'package:app_travel/representation/screens/check_out_screen.dart';
 import 'package:app_travel/representation/screens/detail_hotel_screen.dart';
+import 'package:app_travel/representation/screens/flight_screen.dart';
 import 'package:app_travel/representation/screens/flights_booking_screen.dart';
 import 'package:app_travel/representation/screens/guest_and_room_screen.dart';
 import 'package:app_travel/representation/screens/home_screen.dart';
@@ -11,15 +14,21 @@ import 'package:app_travel/representation/screens/intro_screen.dart';
 import 'package:app_travel/representation/screens/main_app.dart';
 import 'package:app_travel/representation/screens/rooms_screen.dart';
 import 'package:app_travel/representation/screens/select_date_screen.dart';
+import 'package:app_travel/representation/screens/ticket.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 final Map<String, WidgetBuilder> routes = {
   IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => MainApp(),
   HotelsScreen.routeName: (context) => HotelsScreen(),
+  FlightsScreen.routeName: (context) => FlightsScreen(),
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
   GuestAndRoomScreen.routeName: (context) => GuestAndRoomScreen(),
+  Ticket.routeName: (context) => Ticket(),
   RoomsScreen.routeName: (context) => RoomsScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
+  AllScreen.routeName: (context) => AllScreen(),
+  BookTicket.routeName: (context) => BookTicket(),
 };
 
 MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {
