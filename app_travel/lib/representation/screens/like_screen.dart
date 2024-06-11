@@ -5,6 +5,8 @@ import 'package:app_travel/core/helpers/image_helper.dart';
 import 'package:app_travel/representation/screens/hotel_booking_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/container_booking.dart';
+
 class LikeScreen extends StatefulWidget{
    const LikeScreen({Key? key}) : super(key: key);
 
@@ -120,44 +122,38 @@ class _LikeState extends State<LikeScreen>{
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: SingleChildScrollView(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: listImageLeft
-                        .map(
+    return  ContainerBooking(
+      implementTraling: true,
+      titleString: 'Like',
+      child: SingleChildScrollView(
+        child: Row(
+          children: [
+            Expanded(
+                child: Column(
+                  children: listImageLeft.map(
                           (e) => _buidlImageAllScreen(
-                        e['name']!,
-                        e['image']!,
-                      ),
-                    )
-                        .toList(),
-                  ),
+                            e['name']!,
+                            e['image']!,
+                    ),
+                  ).toList(),
                 ),
-                SizedBox(
-                  width: kDefaultPadding,
-                ),
-                Expanded(
-                  child: Column(
-                    children: listImageRight
-                        .map(
-                          (e) => _buidlImageAllScreen(
-                        e['name']!,
-                        e['image']!,
-                      ),
-                    )
-                        .toList(),
-                  ),
-                ),
-              ],
             ),
-          ),
+            SizedBox(
+              width: kDefaultPadding,
+            ),
+            Expanded(
+              child: Column(
+                children: listImageRight.map(
+                      (e) => _buidlImageAllScreen(
+                    e['name']!,
+                    e['image']!,
+                  ),
+                ).toList(),
+              ),
+            ),
+          ],
         ),
-        ]
+      ),
     );
   }
 

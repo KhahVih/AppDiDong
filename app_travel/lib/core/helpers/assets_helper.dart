@@ -47,4 +47,5 @@ mixin AssetHelper {
   static const String HaLong = 'assets/images/halong.jpg';
   static const String Flight1 = 'assets/images/flight1.jpg';
   static const String Flight2 = 'assets/images/flight2.jpg';
+  static const String avata = 'assets/images/avata.jpg';
 }

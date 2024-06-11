@@ -1,7 +1,9 @@
 import 'package:app_travel/core/constants/color_constants.dart';
 import 'package:app_travel/core/constants/dismension_constants.dart';
+import 'package:app_travel/representation/screens/booking_screen.dart';
 import 'package:app_travel/representation/screens/home_screen.dart';
 import 'package:app_travel/representation/screens/like_screen.dart';
+import 'package:app_travel/representation/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -35,6 +37,7 @@ class _MainAppState extends State<MainApp> {
             icon: Icon(
               FontAwesomeIcons.house,
               size: kDefaultPadding,
+              color: ColorPalette.primaryColor,
             ),
             title: Text("Home"),
           ),
@@ -42,6 +45,7 @@ class _MainAppState extends State<MainApp> {
             icon: Icon(
               FontAwesomeIcons.solidHeart,
               size: kDefaultPadding,
+              color: ColorPalette.primaryColor,
             ),
             title: Text("Likes"),
           ),
@@ -49,6 +53,7 @@ class _MainAppState extends State<MainApp> {
             icon: Icon(
               FontAwesomeIcons.briefcase,
               size: kDefaultPadding,
+              color: ColorPalette.primaryColor,
             ),
             title: Text("Booking"),
           ),
@@ -56,6 +61,7 @@ class _MainAppState extends State<MainApp> {
             icon: Icon(
               FontAwesomeIcons.solidUser,
               size: kDefaultPadding,
+              color: ColorPalette.primaryColor,
             ),
             title: Text("Profile"),
           ),
@@ -66,8 +72,8 @@ class _MainAppState extends State<MainApp> {
         children: [
           HomeScreen(),
           LikeScreen(),
-          Container(),
-          Container(),
+          Booking(),
+          ProfileScreen(),
         ],
       ),
     );

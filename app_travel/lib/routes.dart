@@ -10,7 +10,7 @@ import 'package:app_travel/representation/screens/guest_and_room_screen.dart';
 import 'package:app_travel/representation/screens/home_screen.dart';
 import 'package:app_travel/representation/screens/hotel_booking_screen.dart';
 import 'package:app_travel/representation/screens/hotels_screen.dart';
-import 'package:app_travel/representation/screens/intro_screen.dart';
+import 'package:app_travel/login.dart';
 import 'package:app_travel/representation/screens/main_app.dart';
 import 'package:app_travel/representation/screens/rooms_screen.dart';
 import 'package:app_travel/representation/screens/select_date_screen.dart';
@@ -18,7 +18,6 @@ import 'package:app_travel/representation/screens/ticket.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 final Map<String, WidgetBuilder> routes = {
-  IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => MainApp(),
   HotelsScreen.routeName: (context) => HotelsScreen(),
   FlightsScreen.routeName: (context) => FlightsScreen(),
@@ -29,6 +28,7 @@ final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => HomeScreen(),
   AllScreen.routeName: (context) => AllScreen(),
   BookTicket.routeName: (context) => BookTicket(),
+  LoginScreen.routeName: (context) => LoginScreen(),
 };
 
 MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {
