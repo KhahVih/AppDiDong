@@ -1,6 +1,7 @@
 import 'package:app_travel/core/constants/color_constants.dart';
 import 'package:app_travel/core/helpers/local_storage_helper.dart';
 import 'package:app_travel/login.dart';
+import 'package:app_travel/representation/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/helpers/size_config.dart';
@@ -28,7 +29,7 @@ class TravoApp extends StatelessWidget {
       home: Builder(
         builder: (context) {
           SizeConfig.init(context);
-          return LoginScreen();
+          return WelcommeScreen();
         },
       ),
     );

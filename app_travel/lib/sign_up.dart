@@ -1,21 +1,19 @@
 import 'package:app_travel/core/constants/color_constants.dart';
+import 'package:app_travel/login.dart';
 import 'package:app_travel/representation/screens/main_app.dart';
-import 'package:app_travel/representation/widgets/container_booking.dart';
-import 'package:app_travel/sign_up.dart';
+import 'package:app_travel/representation/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-  static const routeName = '/login';
+class SignUpScreen extends StatefulWidget{
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
+  State<SignUpScreen> createState() => _SignUpState();
 
-class _LoginScreenState extends State<LoginScreen> {
+}
+class _SignUpState extends State<SignUpScreen>{
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool passToggle =  true;
+  bool passToggle = true;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -35,13 +33,43 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(height: 30),
+                      TextFormField(
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Full Name',
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.person),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your name';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      TextFormField(
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: 'Phone',
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.phone),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your phone';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
                       TextFormField(
                         controller: _emailController,
+                        obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Email',
                           border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.email)
+                            prefixIcon: Icon(Icons.email),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -60,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                           labelText: 'Password',
                           border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.lock),
+                            prefixIcon: Icon(Icons.lock),
                           suffixIcon: InkWell(
                             onTap: (){
                               if(passToggle == true){
@@ -89,15 +117,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: () {
                             if (_formKey.currentState?.validate() ?? false) {
                               // If the form is valid, display a snackbar.
-                              Navigator.of(context).pushNamed(MainApp.routeName);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => WelcommeScreen()));
                               // Handle login logic here
                             }
                           },
                           child: Text(
-                            'Login',
+                            'Create Account',
                             style: TextStyle(
-                            fontSize: 20,
-                          ),
+                              fontSize: 20,
+                            ),
                           ),
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Colors.white, backgroundColor: Theme.of(context).primaryColor,
@@ -112,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have any account?",
+                            "Already have account?",
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
@@ -120,17 +148,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           TextButton(
-                              onPressed: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
-                              },
-                              child: Text(
-                                "Create Account",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: ColorPalette.primaryColor,
-                                ),
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                            },
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: ColorPalette.primaryColor,
                               ),
+                            ),
                           ),
                         ],
                       ),
@@ -144,4 +172,5 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
 }
